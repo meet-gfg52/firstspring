@@ -1,6 +1,10 @@
 package com.gfg.jbdll.controller;
 
+import com.gfg.jbdll.config.AppConfig;
+import com.gfg.jbdll.domain.Movie;
 import com.gfg.jbdll.service.GreetService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -73,7 +77,7 @@ public class MyFirstController {
      *  4. Success & failure response
      *  5. HTTP status codes -> https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
      *
-     * Successful response:
+     * Successful response
      * {
      *      "title":"MIB",
      *       "genre":"ACTION"
@@ -102,6 +106,10 @@ public class MyFirstController {
         System.out.println("^^^^^^^^^^^^^^i am called");
     }
 
+
+    @Autowired
+    ApplicationContext context;
+
     /**
      *Type: GET
      * Endpoint: /greet
@@ -109,15 +117,16 @@ public class MyFirstController {
 
     /**
      * Get via request param
-     * */
-    @GetMapping(value="/greet")
+     * */   @GetMapping(value="/greet")
     public String greetUser(@RequestParam("abc") String name,@RequestParam("pqr") String lastName){
         GreetService service=new GreetService();
         return service.greetUser(name);
 
     }
+
     @GetMapping(value="/greet/{name}")
     public String greetUserViaPath(@PathVariable("name") String name){
+        System.out.println("in greet controller:"+ context.getBean(Movie.class).hashCode());
         GreetService service=new GreetService();
         return service.greetUser(name);
     }

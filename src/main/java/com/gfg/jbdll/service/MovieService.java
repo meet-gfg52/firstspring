@@ -13,11 +13,11 @@ public class MovieService {
 
     private Map<Integer, Movie>  movieMap=new HashMap<>();
 
-    public boolean addMovie(Movie movie){
+    public Movie addMovie(Movie movie){
         int id=this.movieMap.size()+1;
-        movie.setId(id);
+        //movie.setId(id);t
         this.movieMap.put(id,movie);
-        return true;
+        return movie;
     }
 
     public boolean deleteMovie(Integer  id){
