@@ -18,15 +18,30 @@ import java.util.List;
 public class MovieController {
 
 
-    /**
-     * 3 ways to inject dependencies
+
+    /***
+     * Types of Dependency injection
+     * 1. Constructor dependency injection -- recommended
+     * ex: public MovieController(<DEPENDENCY instance> service){
+     *     this.service=service;
+     * }
+     * 2. Field dependency injection
      *
-     * 1. Autowired annotations
-     * 2. Constructor
-     * 3. Setter
+     * @Autowired
+     * Service service;
      *
      *
-     * */
+     * 3. Setter dependency injection
+     *
+     * Service = null
+     *
+     * @Autowired
+     * public void setService(<Dependency instance> service)
+     * {
+     *     this.service=service;
+     * }
+     *
+     **/
 
 
     @Autowired
@@ -34,17 +49,6 @@ public class MovieController {
 
     @Autowired
     MovieService service;
-
-//    @Autowired
-//    public MovieController(MovieService service){
-//       this.service=service;
-//    }
-
-//
-//    @Autowired
-//    public void setMovieService(MovieService service){
-//        this.service=service;
-//    }
 
 
 

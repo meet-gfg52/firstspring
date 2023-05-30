@@ -15,6 +15,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+/***
+ * @ControllerAdvice is global exception handler for all the controllers in project
+ *
+ * class can extend ResponseEntityExceptionHandler to override the method of native exception
+ * and can also have handel of custom business exception with the exception pass as parameter and in the
+ * @ExceptionHandler annotation.
+ *
+ *
+ * */
+
+
 @RestControllerAdvice
 public class ControllerAdvice{
 

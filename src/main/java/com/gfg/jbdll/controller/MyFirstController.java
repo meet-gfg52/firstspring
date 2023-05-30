@@ -102,9 +102,25 @@ public class MyFirstController {
      * 2. @GetMapping, @PostMapping
      * */
 
-    MyFirstController(){
-        System.out.println("^^^^^^^^^^^^^^i am called");
-    }
+    /**There are 2 ways to read Get param,
+     * One is via request parameter
+     *  ex: abc.com?name=<VALUE>
+     *  Two is via URL value
+     *  ex: abc.com/<VALUE>/
+     *
+     * */
+/**
+ * @Component : if this annotation is used directly or indirectly. Spring will create Bean of a class.
+ * if an object is created,managed and accessed by Spring  such objects are called Beans
+ * */
+
+    /**
+     * Accessing an object by our service
+     * 1. ask from Application Context
+     * 2. Inject it.
+     *
+     * */
+
 
 
     @Autowired
